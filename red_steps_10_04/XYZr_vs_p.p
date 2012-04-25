@@ -1,0 +1,32 @@
+# Gnuplot script para plotear errores
+# ejecutar: gnuplot > load 'XYZr_vs_p.p'
+set encoding iso_8859_1
+set terminal postscript color eps enhanced 10
+set output 'XYZrealVspred.eps'
+set multiplot
+set size 1,0.333
+set origin 0.0,0.666
+set title "X" font "Times-Roman,18"
+set xrange [1000:1300]
+#set yrange [-350:350]
+set xlabel "Patrones" font "Times-Italic,11"
+set ylabel "Milimetros" font "Times-Italic,11"
+set grid
+plot "x.dat" u 0:2 w lines t 'x real', "x.dat" u 0:3 w lines t 'x pred'
+set origin 0.0,0.333
+set title "Y" font "Times-Roman,18"
+#set xrange [0:200]
+set xlabel "Patrones" font "Times-Italic,11"
+set ylabel "Milimetros" font "Times-Italic,11"
+set grid
+plot "y.dat" u 0:2 w lines t 'y real', "y.dat" u 0:3 w lines t 'y pred'
+set origin 0.0,0.0
+set title "Z" font "Times-Roman,18"
+#set xrange [300:400]
+#set yrange [1500:1600]
+set xlabel "Patrones" font "Times-Italic,11"
+set ylabel "Milimetros" font "Times-Italic,11"
+set grid
+plot "z.dat" u 0:2 w lines t 'z real', "z.dat" u 0:3 w lines t 'z pred'
+unset multiplot
+

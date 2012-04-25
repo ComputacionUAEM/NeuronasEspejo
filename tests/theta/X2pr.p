@@ -1,0 +1,11 @@
+# Gnuplot script para plotear errores
+# ejecutar: gnuplot > load 'todos.p'
+set title "X Predicho y Real" font "Times-Roman,18"
+set xlabel "Patrones" font "Times-Italic,14"
+set ylabel "Milimetros" font "Times-Italic,14"
+set encoding iso_8859_1
+set terminal postscript color eps enhanced 10
+set output 'X2pr.eps'
+set grid 
+plot "grados2.dat" u 0:2 w lines t 'X Real', "grados2.dat" u 0:3 w lines t 'X Pred';
+

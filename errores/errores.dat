@@ -1,0 +1,28 @@
+La primera columna es el valor correspondiente a la red con Vi, Vd y t
+La segunda columna es el valor correspondiente a la red con Vi*t y Vd*t
+La tercera columna es el valor correspondiente a la red igual a la anterior pero sin theta
+La primera fila muestra el error en promedio de 800 patrones
+La segunda fila muestra el numero de veces que la red correspondiente tiene mayor error
+La tercera fila muestra el valor del peor error de cada red en milimetros
+ 
+******* Error X *******
+Promedio: 66.210640 63.643635 64.060147
+# Mayor:  166       108       127
+Mayor:    294       288       330
+
+******* Error Y *******
+Promedio: 4.229773 3.758201 3.330610
+# Mayor:  180      127      94
+Mayor:    27       29       21
+
+******* Error Z *******
+Promedio: 56.294907 51.601660 49.461975
+# Mayor:  173       117       111
+Mayor:    496       452       322
+
+******* Error Theta *******
+Promedio: 10.913161 10.483243
+# Mayor:  221       180
+Mayor:    77        77
+
+Segun estos datos la que se comporta mejor es la ultima con Vi*t, Vd*t y sin theta, sin embargo no es mucho mejor, solo un poco mejor. si se utiliza la ultima hay que utilizar otro perceptron para predecir theta...

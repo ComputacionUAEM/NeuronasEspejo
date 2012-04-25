@@ -1,0 +1,28 @@
+# Gnuplot script para plotear errores
+# ejecutar: gnuplot > load 'correla.p'
+set encoding iso_8859_1
+set terminal postscript color eps enhanced 10
+set output 'corr.eps'
+set multiplot
+set size 1,0.5
+set origin 0.0,0.5
+set xtics 5
+set mxtics 5
+set ytics 10000
+set grid xtics mxtics ytics
+set title "{/Symbol \326}((Vl-Vr)^2)" font "Times-Roman,18"
+set xrange [0:100]
+set xlabel "Patrones" font "Times-Italic,14"
+set ylabel "Diferencia" font "Times-Italic,14"
+plot "correlacion.dat" u 0:5 w lines t '{/Symbol \326}((Vl-Vr)^2)'
+set origin 0.0,0.0
+set xtics 5
+set mxtics 5
+set ytics 50
+set grid xtics mxtics ytics
+set title "{/Symbol \326}((Xr-Xp)^2)" font "Times-Roman,18"
+set xrange [0:100]
+set xlabel "Patrones" font "Times-Italic,14"
+set ylabel "Diferencia" font "Times-Italic,14"
+plot "correlacion.dat" u 0:6 w lines t '{/Symbol \326}((Xr-Xp)^2)'
+unset multiplot
